@@ -3,7 +3,7 @@ import React from 'react';
 export default () => {
 	return (
 		<div>
-			<h1 className='display-4'>What is Naruto Run?</h1>
+			<h1 className='display-4 text-center'>What is Naruto Run?</h1>
 			<p className='lead'>
 				Naruto Run helps to speed up the process of identifying which area of
 				the tech world people want to work in and the best road to run down to
