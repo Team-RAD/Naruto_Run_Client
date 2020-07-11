@@ -19,7 +19,7 @@ const AppNavBar = (props) => {
 						</li>
 						<li className='nav-item'>
 							<Link to='/about' className='nav-link'>
-								<i className='fas fa-info-circle'></i> About
+								<i className='fas fa-info'></i> About
 							</Link>
 						</li>
 						{/* <li className='nav-item'>
