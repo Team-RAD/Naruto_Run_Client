@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import AppNavBar from './components/layout/AppNavBar';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
+import Posts from './components/posts/Posts';
 
 const App = () => {
 	return (
@@ -11,6 +12,7 @@ const App = () => {
 				<AppNavBar branding='Naruto Run' />
 				<div className='container'>
 					<Switch>
+						<Route exact path='/' component={Posts}></Route>
 						<Route exact path='/about' component={About}></Route>
 						<Route component={NotFound}></Route>
 					</Switch>
