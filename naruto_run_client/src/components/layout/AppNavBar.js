@@ -22,11 +22,11 @@ const AppNavBar = (props) => {
 								<i className='fas fa-info'></i> About
 							</Link>
 						</li>
-						{/* <li className='nav-item'>
-							<Link to='/contact/add' className='nav-link'>
-								<i className='fas fa-plus-circle'></i> Add
+						<li className='nav-item'>
+							<Link to='/post' className='nav-link'>
+								<i className='fas fa-plus-circle'></i> POST
 							</Link>
-						</li> */}
+						</li>
 					</ul>
 				</div>
 			</div>
