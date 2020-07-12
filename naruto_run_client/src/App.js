@@ -4,6 +4,7 @@ import AppNavBar from './components/layout/AppNavBar';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Posts from './components/posts/Posts';
+import Post from './components/posts/Post';
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 					<Switch>
 						<Route exact path='/' component={Posts}></Route>
 						<Route exact path='/about' component={About}></Route>
+						<Route exact path='/post' component={Post}></Route>
 						<Route component={NotFound}></Route>
 					</Switch>
 				</div>
