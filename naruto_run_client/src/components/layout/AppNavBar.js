@@ -7,7 +7,7 @@ const AppNavBar = (props) => {
 	return (
 		<nav className='navbar navbar-expand-sm navbar-dark bg-dark mb-3 py-0'>
 			<div className='container'>
-				<a href='/' className='navbar-brand'>
+				<a href='/' className='navbar-brand h1 text-warning'>
 					{branding}
 				</a>
 				<div>

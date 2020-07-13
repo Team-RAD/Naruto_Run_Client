@@ -20,9 +20,10 @@ class Register extends Component {
 					<div className='card'>
 						<div className='card-body'>
 							<h1 className='text-center pb-4 pt-3'>
-								<span className='text-danger'>
-									<i className='fas fa-file-alt'></i> Register{' '}
-								</span>
+								<span className='text-warning'>
+									<i className='fas fa-file-alt'></i>
+								</span>{' '}
+								Register{' '}
 							</h1>
 							<form onSubmit={this.onSubmit}>
 								<div className='form-group'>
@@ -50,7 +51,7 @@ class Register extends Component {
 								<input
 									type='submit'
 									value='Register'
-									className='btn btn-danger btn-block'
+									className='btn btn-warning btn-block'
 								/>
 							</form>
 						</div>
