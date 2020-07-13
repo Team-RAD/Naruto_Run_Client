@@ -27,6 +27,16 @@ const AppNavBar = (props) => {
 								<i className='fas fa-plus-circle'></i> POST
 							</Link>
 						</li>
+						<li className='nav-item'>
+							<Link to='/login' className='nav-link'>
+								<i className='fas fa-sign-in-alt'></i> Login
+							</Link>
+						</li>
+						<li className='nav-item'>
+							<Link to='/register' className='nav-link'>
+								<i className='fas fa-file-alt'></i> Register
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>
