@@ -5,6 +5,7 @@ import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Posts from './components/posts/Posts';
 import Post from './components/posts/Post';
+import Login from './components/auth/Login';
 
 const App = () => {
 	return (
@@ -16,6 +17,7 @@ const App = () => {
 						<Route exact path='/' component={Posts}></Route>
 						<Route exact path='/about' component={About}></Route>
 						<Route exact path='/post' component={Post}></Route>
+						<Route exact path='/login' component={Login}></Route>
 						<Route component={NotFound}></Route>
 					</Switch>
 				</div>
