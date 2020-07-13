@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Register extends Component {
 	state = {
 		email: '',
 		password: ''
@@ -21,7 +21,7 @@ class Login extends Component {
 						<div className='card-body'>
 							<h1 className='text-center pb-4 pt-3'>
 								<span className='text-danger'>
-									<i className='fas fa-sign-in-alt'></i> Login{' '}
+									<i className='fas fa-file-alt'></i> Register{' '}
 								</span>
 							</h1>
 							<form onSubmit={this.onSubmit}>
@@ -49,7 +49,7 @@ class Login extends Component {
 								</div>
 								<input
 									type='submit'
-									value='Login'
+									value='Register'
 									className='btn btn-danger btn-block'
 								/>
 							</form>
@@ -61,4 +61,4 @@ class Login extends Component {
 	}
 }
 
-export default Login;
+export default Register;
