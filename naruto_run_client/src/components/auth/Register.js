@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Register extends Component {
 	state = {
 		email: '',
-		password: ''
+		password: '',
+		firstName: '',
+		lastName: ''
 	};
 
 	onSubmit = (e) => {
@@ -26,6 +28,28 @@ class Register extends Component {
 								Register{' '}
 							</h1>
 							<form onSubmit={this.onSubmit}>
+								<div className='form-group'>
+									<label htmlFor='firstName'>First Name</label>
+									<input
+										type='text'
+										className='form-control'
+										name='firstName'
+										required
+										value={this.state.firstName}
+										onChange={this.onChange}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='lastName'>Last Name</label>
+									<input
+										type='text'
+										className='form-control'
+										name='lastName'
+										required
+										value={this.state.lastName}
+										onChange={this.onChange}
+									/>
+								</div>
 								<div className='form-group'>
 									<label htmlFor='email'>Email</label>
 									<input
