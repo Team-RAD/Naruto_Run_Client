@@ -16,9 +16,9 @@ export default () => {
 				</h2>
 				<p className='lead'>
 					Technology is a massive industry with many pathways of entry and
-					career directions to take. It’s often very daunting for new tech
-					hopefuls to get started on their journey and this can be made harder
-					by uncertainty with how best to proceed due to seemingly limitless
+					career directions to take. It’s often daunting for new tech hopefuls
+					to get started on their journey and this can be made harder by
+					uncertainty with how best to proceed due to seemingly limitless
 					opinions online.
 				</p>
 			</div>
