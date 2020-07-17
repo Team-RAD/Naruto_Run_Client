@@ -7,19 +7,14 @@ import { logoutUser } from '../../services/authServices';
 const AppNavBar = (props) => {
 	const { branding } = props;
 
-	// Logout user
 	function handleLogout() {
 		logoutUser()
 			.then((response) => {
-				console.log('Got back response on logout', response.status);
+				console.log('Logged out response received:', response.status);
 			})
 			.catch((error) => {
-				console.log(
-					'The server may be down - caught an exception on logout:',
-					error
-				);
+				console.log('Server not found. Exception on logout:', error);
 			});
-		// Even if we catch an error, logout the user locally
 		dispatch({
 			type: 'setLoggedInUser',
 			data: null
