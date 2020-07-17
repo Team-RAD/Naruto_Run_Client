@@ -32,7 +32,7 @@ export async function userAuthenticated() {
 
 //get the logged in user from localStorage
 export function getLoggedInUser() {
-	return loggedInUser.getItem('loggedInUser');
+	return localStorage.getItem('loggedInUser');
 }
 
 //store the logged in user to localStorage
