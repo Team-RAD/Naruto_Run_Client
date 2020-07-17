@@ -55,7 +55,7 @@ const Login = ({ history }) => {
 						</h1>
 						<form onSubmit={onSubmit}>
 							{errorMessage && (
-								<div class='alert alert-danger text-center' role='alert'>
+								<div className='alert alert-danger text-center' role='alert'>
 									{errorMessage}
 								</div>
 							)}
