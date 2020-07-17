@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import authServices, {
+	loginUser,
+	setLoggedInUser
+} from '../../services/authServices';
 
 class Login extends Component {
 	state = {
@@ -8,7 +12,14 @@ class Login extends Component {
 
 	onSubmit = (e) => {
 		e.preventDefault();
-		// const { email, password } = this.state;
+		loginUser(userDetails)
+			.then(() => {
+				dispatch({ type: 'setLoggedInUser', data: userDetails.username });
+				history.push('/');
+			})
+			.catch((error) => {
+				console.log(`An error occurred while authenticating: ${error}`);
+			});
 	};
 
 	onChange = (e) => this.setState({ [e.target.name]: e.target.value });
