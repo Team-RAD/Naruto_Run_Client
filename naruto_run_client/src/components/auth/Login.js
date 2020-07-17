@@ -9,6 +9,7 @@ const Login = ({ history }) => {
 	};
 
 	const [userDetails, setUserDetails] = useState(initialFormState);
+	const [errorMessage, setErrorMessage] = useState(null);
 	const { dispatch } = useGlobalState();
 
 	function onSubmit(e) {
@@ -20,8 +21,14 @@ const Login = ({ history }) => {
 				history.push('/');
 			})
 			.catch((error) => {
-				// TODO - handle error messages
-				console.log(`An error occurred while authenticating: ${error}`);
+				if (error.response && error.response.status === 401)
+					setErrorMessage(
+						'Invalid login details. Please check your username and password.'
+					);
+				else
+					setErrorMessage(
+						'The server is not responding. Please wait a moment and try again.'
+					);
 			});
 	}
 
@@ -47,14 +54,20 @@ const Login = ({ history }) => {
 							Login{' '}
 						</h1>
 						<form onSubmit={onSubmit}>
+							{errorMessage && (
+								<div class='alert alert-danger text-center' role='alert'>
+									{errorMessage}
+								</div>
+							)}
+							<br />
 							<div className='form-group'>
 								<label htmlFor='username'>Username</label>
 								<input
 									type='text'
 									className='form-control'
 									name='username'
+									placeholder='Enter your username...'
 									required
-									value={initialFormState.username}
 									onChange={onChange}
 								/>
 							</div>
@@ -64,8 +77,8 @@ const Login = ({ history }) => {
 									type='password'
 									className='form-control'
 									name='password'
+									placeholder='Enter your password...'
 									required
-									value={initialFormState.password}
 									onChange={onChange}
 								/>
 							</div>
