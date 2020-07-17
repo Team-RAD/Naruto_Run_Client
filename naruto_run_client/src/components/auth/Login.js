@@ -11,16 +11,6 @@ const Login = ({ history }) => {
 	const [userDetails, setUserDetails] = useState(initialFormState);
 	const { dispatch } = useGlobalState();
 
-	function onChange(e) {
-		e.preventDefault();
-		const name = e.target.name;
-		const value = e.target.value;
-		setUserDetails({
-			...userDetails,
-			[name]: value
-		});
-	}
-
 	function onSubmit(e) {
 		e.preventDefault();
 		loginUser(userDetails)
@@ -33,6 +23,16 @@ const Login = ({ history }) => {
 				// TODO - handle error messages
 				console.log(`An error occurred while authenticating: ${error}`);
 			});
+	}
+
+	function onChange(e) {
+		e.preventDefault();
+		const name = e.target.name;
+		const value = e.target.value;
+		setUserDetails({
+			...userDetails,
+			[name]: value
+		});
 	}
 
 	return (
