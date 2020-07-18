@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import { useGlobalState } from '../../config/store';
 import { logoutUser } from '../../services/authServices';
 
-const AppNavBar = (props) => {
-	const { branding } = props;
-
+const AppNavBar = () => {
 	function handleLogout() {
 		logoutUser()
 			.then((response) => {
@@ -25,13 +23,21 @@ const AppNavBar = (props) => {
 	const { loggedInUser } = store;
 
 	return (
-		<nav className='navbar navbar-expand-sm navbar-dark bg-dark mb-3 py-0'>
+		<nav className='navbar navbar-expand-md navbar-dark bg-dark mb-3 py-0'>
 			<div className='container'>
-				<a href='/' className='navbar-brand h1 text-warning'>
-					{branding}
-				</a>
-				<div>
-					<ul className='navbar-nav mr-auto'>
+				<Link to='/' className='navbar-brand h1 text-warning'>
+					Naruto Run
+				</Link>
+				<button
+					className='navbar-toggler'
+					type='button'
+					data-toggle='collapse'
+					data-target='#navbarMain'
+				>
+					<span className='navbar-toggler-icon'></span>
+				</button>
+				<div className='collapse navbar-collapse flex-grow-0' id='navbarMain'>
+					<ul className='navbar-nav text-right mr-auto'>
 						<li className='nav-item'>
 							<Link to='/' className='nav-link'>
 								<i className='fas fa-home'></i> Home
