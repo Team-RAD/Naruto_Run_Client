@@ -1,7 +1,8 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import stateReducer from './config/stateReducer';
 import { StateContext } from './config/store';
+import { getAllNarutoPosts } from './services/narutoPostServices';
 import AppNavBar from './components/layout/AppNavBar';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
@@ -18,6 +19,23 @@ const App = () => {
 	};
 
 	const [store, dispatch] = useReducer(stateReducer, initialState);
+
+	function fetchNarutoPosts() {
+		getAllNarutoPosts()
+			.then((narutoData) => {
+				dispatch({ type: 'setNarutoPosts', data: narutoData });
+			})
+			.catch((error) => {
+				console.log(
+					'Error occurred while fetching Naruto Posts from server',
+					error
+				);
+			});
+	}
+
+	useEffect(() => {
+		fetchNarutoPosts();
+	}, []);
 
 	return (
 		<StateContext.Provider value={{ store, dispatch }}>
