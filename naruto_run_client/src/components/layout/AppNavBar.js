@@ -45,13 +45,13 @@ const AppNavBar = (props) => {
 						{loggedInUser
 							? [
 									<li className='nav-item'>
-										<Link to='/' onClick={handleLogout} className='nav-link'>
-											<i className='fas fa-sign-in-alt'></i> Logout
+										<Link to='/post/new' className='nav-link'>
+											<i className='fas fa-plus-circle'></i> Add Post
 										</Link>
 									</li>,
 									<li className='nav-item'>
-										<Link to='/post/new' className='nav-link'>
-											<i className='fas fa-plus-circle'></i> Add Post
+										<Link to='/' onClick={handleLogout} className='nav-link'>
+											<i className='fas fa-sign-in-alt'></i> Logout
 										</Link>
 									</li>
 							  ]
