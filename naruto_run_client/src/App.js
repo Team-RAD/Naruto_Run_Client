@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import stateReducer from './config/stateReducer';
 import { StateContext } from './config/store';
 import AppNavBar from './components/layout/AppNavBar';
