@@ -51,7 +51,7 @@ const AppNavBar = () => {
 						{loggedInUser
 							? [
 									<li className='nav-item'>
-										<Link to='/post/new' className='nav-link'>
+										<Link to='/posts/new' className='nav-link'>
 											<i className='fas fa-plus-circle'></i> Add Post
 										</Link>
 									</li>,
