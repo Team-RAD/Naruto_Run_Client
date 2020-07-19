@@ -13,6 +13,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 
 	const {
 		username,
+		// modified_date,
 		pre_tech_job,
 		current_tech_job,
 		education,
