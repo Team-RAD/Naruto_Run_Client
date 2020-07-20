@@ -142,7 +142,7 @@ const NewPost = ({ history }) => {
 									className='form-control'
 									name='time_taken'
 									required
-									placeholder='Enter the approximate time taken to land your first job...'
+									placeholder='Enter the approximate time taken to land your first tech job...'
 									onChange={onChange}
 								/>
 							</div>
