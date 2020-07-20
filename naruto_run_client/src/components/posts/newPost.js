@@ -76,63 +76,163 @@ const NewPost = ({ history }) => {
 	const { narutoPosts } = store;
 
 	return (
-		<form id='newPostForm' onSubmit={onSubmit}>
-			{errorMessage && (
-				<div className='alert alert-danger text-center' role='alert'>
-					{errorMessage}
+		<div>
+			<div>
+				<h1 className='display-4 text-center'>
+					Add Your<span className='text-warning'> Naruto Post</span>
+				</h1>
+			</div>
+			<div className='card'>
+				<div className='card-header'>
+					<div className='card-body'>
+						<form onSubmit={onSubmit}>
+							{errorMessage && (
+								<div className='alert alert-danger text-center' role='alert'>
+									{errorMessage}
+								</div>
+							)}
+							<div className='form-group'>
+								<label htmlFor='pre_tech_job'>Pre Tech Job:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='pre_tech_job'
+									placeholder='Enter your previous job/career to tech...'
+									required
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='current_tech_job'>Current Tech Job:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='current_tech_job'
+									placeholder='Enter your current tech job title...'
+									required
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='education'>Education:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='education'
+									placeholder='Enter the education route you took...'
+									required
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='resources_required'>Resources Required:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='resources_required'
+									placeholder='Enter the resources you used to learn...'
+									required
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='time_taken'>Time Taken:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='time_taken'
+									required
+									placeholder='Enter the approximate time taken to land your first job...'
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='cost'>Cost:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='cost'
+									required
+									placeholder='Enter the approximate cost of your journey into tech...'
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='journey'>Your journey:</label>
+								<textarea
+									type='text'
+									className='form-control'
+									name='journey'
+									rows='5'
+									required
+									placeholder='Give a brief description of your journey into tech, any advice, anything you would have done differently...'
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='tech_stack'>Top 3 Techs:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='tech_stack'
+									required
+									placeholder='Enter your three recommended technologies to learn...'
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='os_allegiance'>OS Allegiance:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='os_allegiance'
+									required
+									placeholder='Pledge your operating system allegiance...'
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='fueled_by'>Fueled by:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='fueled_by'
+									placeholder='What fuels your tech life? Coffee, Ramen, Exercising etc....'
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='favourite_coding_playlist'>
+									Favourite Coding Playlist:
+								</label>
+								<input
+									type='text'
+									className='form-control'
+									name='favourite_coding_playlist'
+									placeholder='Enter your favourite coding playlist...'
+									onChange={onChange}
+								/>
+							</div>
+							<div className='form-group'>
+								<label htmlFor='follow_me_links'>Social Links:</label>
+								<input
+									type='text'
+									className='form-control'
+									name='follow_me_links'
+									placeholder='Enter your social media links...'
+									onChange={onChange}
+								/>
+							</div>
+							<input
+								type='submit'
+								value='Submit'
+								className='btn btn-warning btn-block'
+							/>
+						</form>
+					</div>
 				</div>
-			)}
-			<div>
-				<label>Pre Tech Job</label>
-				<input
-					type='text'
-					name='pre_tech_job'
-					placeholder='Enter your job prior to tech'
-					onChange={onChange}
-				/>
 			</div>
-			<div>
-				<label>Current Tech Job</label>
-				<input
-					type='text'
-					name='current_tech_job'
-					placeholder='Enter your current job in tech'
-					onChange={onChange}
-				/>
-			</div>
-			<div>
-				<label>Education Route</label>
-				<input
-					type='text'
-					name='education'
-					placeholder='Enter the education route you took'
-					onChange={onChange}
-				/>
-			</div>
-			<div>
-				<label>Resources You Needed</label>
-				<input
-					type='text'
-					name='resources_required'
-					placeholder='Enter the resources you needed'
-					onChange={onChange}
-				/>
-			</div>
-			<div>
-				<label>Time Taken</label>
-				<input
-					type='text'
-					name='time_taken'
-					placeholder='Enter the approx time taken'
-					onChange={onChange}
-				/>
-			</div>
-			<input
-				type='submit'
-				value='Submit'
-				className='btn btn-warning btn-block'
-			/>
-		</form>
+		</div>
 	);
 };
 
