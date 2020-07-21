@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useGlobalState } from '../../config/store';
-import { addNarutoPost } from '../../services/narutoPostServices';
+import {
+	updateNarutoPost,
+	getPostById
+} from '../../services/narutoPostServices';
 
-const NewPost = ({ history }) => {
+const EditPost = ({ history, match }) => {
+	const { store, dispatch } = useGlobalState();
+	const { narutoPosts } = store;
+	const postId = match && match.params ? match.params.id : -1;
+	const post = getPostById(narutoPosts, postId);
+
 	function onChange(e) {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -15,9 +23,10 @@ const NewPost = ({ history }) => {
 
 	function onSubmit(e) {
 		e.preventDefault();
-		const newPost = {
+		const updatedPost = {
+			_id: post._id,
 			username: formState.username,
-			// modified_date,
+			// modified_date: new Date(),
 			pre_tech_job: formState.pre_tech_job,
 			current_tech_job: formState.current_tech_job,
 			education: formState.education,
@@ -32,17 +41,20 @@ const NewPost = ({ history }) => {
 			follow_me_links: formState.follow_me_links
 		};
 
-		addNarutoPost(newPost)
-			.then((newPost) => {
+		updateNarutoPost(updatedPost)
+			.then(() => {
+				const otherPosts = narutoPosts.filter(
+					(post) => post._id !== updatedPost._id
+				);
 				dispatch({
 					type: 'setNarutoPosts',
-					data: [newPost, ...narutoPosts]
+					data: [updatedPost, ...otherPosts]
 				});
-				history.push(`/posts/${newPost._id}`);
+				history.push(`/posts/${post._id}`);
 			})
 			.catch((error) => {
 				const status = error.response ? error.response.status : 500;
-				console.log('There was an error making the post:', error);
+				console.log('There was an error editing the post:', error);
 				if (status === 403)
 					setErrorMessage(
 						'Sorry! Your session has gone missing. Please ensure that 3rd party cookies are not blocked in your browser settings.'
@@ -72,14 +84,32 @@ const NewPost = ({ history }) => {
 
 	const [formState, setFormState] = useState(initialFormState);
 	const [errorMessage, setErrorMessage] = useState(null);
-	const { store, dispatch } = useGlobalState();
-	const { narutoPosts } = store;
+
+	useEffect(() => {
+		// Set the formState to the fields in the post after mount and when post changes
+		post &&
+			setFormState({
+				username: post.username,
+				pre_tech_job: post.pre_tech_job,
+				current_tech_job: post.current_tech_job,
+				education: post.education,
+				resources_required: post.resources_required,
+				time_taken: post.time_taken,
+				cost: post.cost,
+				journey: post.journey,
+				tech_stack: post.tech_stack,
+				os_allegiance: post.os_allegiance,
+				fueled_by: post.fueled_by,
+				favourite_coding_playlist: post.favourite_coding_playlist,
+				follow_me_links: post.follow_me_links
+			});
+	}, [post]);
 
 	return (
 		<div>
 			<div>
 				<h1 className='display-4 text-center'>
-					Add Your<span className='text-warning'> Naruto Post</span>
+					Edit Your<span className='text-warning'> Naruto Post</span>
 				</h1>
 			</div>
 			<div className='card'>
@@ -97,8 +127,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='pre_tech_job'
-									placeholder='Enter your previous job/career to tech...'
-									required
+									value={formState.pre_tech_job}
 									onChange={onChange}
 								/>
 							</div>
@@ -108,8 +137,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='current_tech_job'
-									placeholder='Enter your current tech job title...'
-									required
+									value={formState.current_tech_job}
 									onChange={onChange}
 								/>
 							</div>
@@ -119,8 +147,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='education'
-									placeholder='Enter the education route you took...'
-									required
+									value={formState.education}
 									onChange={onChange}
 								/>
 							</div>
@@ -130,8 +157,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='resources_required'
-									placeholder='Enter the resources you used to learn...'
-									required
+									value={formState.resources_required}
 									onChange={onChange}
 								/>
 							</div>
@@ -141,8 +167,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='time_taken'
-									required
-									placeholder='Enter the approximate time taken to land your first tech job...'
+									value={formState.time_taken}
 									onChange={onChange}
 								/>
 							</div>
@@ -152,8 +177,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='cost'
-									required
-									placeholder='Enter the approximate cost of your journey into tech...'
+									value={formState.cost}
 									onChange={onChange}
 								/>
 							</div>
@@ -164,8 +188,7 @@ const NewPost = ({ history }) => {
 									className='form-control'
 									name='journey'
 									rows='5'
-									required
-									placeholder='Give a brief description of your journey into tech, any advice, anything you would have done differently...'
+									value={formState.journey}
 									onChange={onChange}
 								/>
 							</div>
@@ -175,8 +198,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='tech_stack'
-									required
-									placeholder='Enter your three recommended technologies to learn...'
+									value={formState.tech_stack}
 									onChange={onChange}
 								/>
 							</div>
@@ -186,8 +208,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='os_allegiance'
-									required
-									placeholder='Pledge your operating system allegiance...'
+									value={formState.os_allegiance}
 									onChange={onChange}
 								/>
 							</div>
@@ -197,7 +218,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='fueled_by'
-									placeholder='What fuels your tech life? Coffee, Ramen, Exercising etc....'
+									value={formState.fueled_by}
 									onChange={onChange}
 								/>
 							</div>
@@ -209,7 +230,7 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='favourite_coding_playlist'
-									placeholder='Enter your favourite coding playlist...'
+									value={formState.favourite_coding_playlist}
 									onChange={onChange}
 								/>
 							</div>
@@ -219,13 +240,13 @@ const NewPost = ({ history }) => {
 									type='text'
 									className='form-control'
 									name='follow_me_links'
-									placeholder='Enter your social media links...'
+									value={formState.follow_me_links}
 									onChange={onChange}
 								/>
 							</div>
 							<input
 								type='submit'
-								value='Create'
+								value='Update'
 								className='btn btn-warning btn-block'
 							/>
 						</form>
@@ -236,4 +257,4 @@ const NewPost = ({ history }) => {
 	);
 };
 
-export default withRouter(NewPost);
+export default withRouter(EditPost);

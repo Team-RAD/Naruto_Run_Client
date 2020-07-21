@@ -7,7 +7,7 @@ export async function getAllNarutoPosts() {
 }
 
 //Retrieve a Naruto Post by ID
-export function getPostFromId(narutoPosts, id) {
+export function getPostById(narutoPosts, id) {
 	const post = narutoPosts.find((post) => post._id === id);
 	return post;
 }

@@ -9,6 +9,7 @@ import NotFound from './components/pages/NotFound';
 import Posts from './components/posts/Posts';
 import Post from './components/posts/Post';
 import NewPost from './components/posts/NewPost';
+import EditPost from './components/posts/EditPost';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 
@@ -49,6 +50,7 @@ const App = () => {
 							<Route exact path='/about' component={About}></Route>
 							<Route exact path='/posts/:id' component={Post}></Route>
 							<Route exact path='/new' component={NewPost} />
+							<Route exact path='/edit/:id' component={EditPost} />
 							<Route exact path='/login' component={Login}></Route>
 							<Route exact path='/register' component={Register}></Route>
 							<Route component={NotFound}></Route>
