@@ -7,7 +7,7 @@ import AppNavBar from './components/layout/AppNavBar';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Posts from './components/posts/Posts';
-import Post from './components/posts/Post';
+import ViewPost from './components/posts/ViewPost';
 import NewPost from './components/posts/NewPost';
 import EditPost from './components/posts/EditPost';
 import Login from './components/auth/Login';
@@ -48,7 +48,7 @@ const App = () => {
 						<Switch>
 							<Route exact path='/' component={Posts}></Route>
 							<Route exact path='/about' component={About}></Route>
-							<Route exact path='/posts/:id' component={Post}></Route>
+							<Route exact path='/posts/:id' component={ViewPost}></Route>
 							<Route exact path='/new' component={NewPost} />
 							<Route exact path='/edit/:id' component={EditPost} />
 							<Route exact path='/login' component={Login}></Route>
