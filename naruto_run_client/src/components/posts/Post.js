@@ -70,22 +70,138 @@ const NarutoPost = ({ history, post, showControls }) => {
 					{errorMessage}
 				</div>
 			)}
-			<Link to={`/posts/${post._id}`}>
-				<h1 className='display-5 text-center text-warning'>{username}</h1>
-			</Link>
-			{/* <TimeAgo date={modified_date} /> */}
-			<p>{pre_tech_job}</p>
-			<p>{current_tech_job}</p>
-			<p>{education}</p>
-			<p>{resources_required}</p>
-			<p>{time_taken}</p>
-			<p>{cost}</p>
-			<p>{journey}</p>
-			<p>{tech_stack}</p>
-			<p>{os_allegiance}</p>
-			<p>{fueled_by}</p>
-			<p>{favourite_coding_playlist}</p>
-			<p>{follow_me_links}</p>
+
+			<div>
+				<Link to={`/posts/${post._id}`}>
+					<h1 className='display-5 text-center text-warning'>{username}</h1>
+				</Link>
+				{/* <TimeAgo date={modified_date} /> */}
+				<div className='card'>
+					<div className='card-header'>
+						<div className='card-body'>
+							<form>
+								{errorMessage && (
+									<div className='alert alert-danger text-center' role='alert'>
+										{errorMessage}
+									</div>
+								)}
+								<div className='form-group'>
+									<label htmlFor='pre_tech_job'>Pre Tech Job:</label>
+									<input
+										className='form-control'
+										name='pre_tech_job'
+										value={pre_tech_job}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='current_tech_job'>Current Tech Job:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='current_tech_job'
+										value={current_tech_job}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='education'>Education:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='education'
+										value={education}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='resources_required'>
+										Resources Required:
+									</label>
+									<input
+										type='text'
+										className='form-control'
+										name='resources_required'
+										value={resources_required}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='time_taken'>Time Taken:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='time_taken'
+										value={time_taken}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='cost'>Cost:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='cost'
+										value={cost}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='journey'>Your journey:</label>
+									<textarea
+										type='text'
+										className='form-control'
+										name='journey'
+										rows='5'
+										value={journey}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='tech_stack'>Top 3 Techs:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='tech_stack'
+										value={tech_stack}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='os_allegiance'>OS Allegiance:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='os_allegiance'
+										value={os_allegiance}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='fueled_by'>Fueled by:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='fueled_by'
+										value={fueled_by}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='favourite_coding_playlist'>
+										Favourite Coding Playlist:
+									</label>
+									<input
+										type='text'
+										className='form-control'
+										name='favourite_coding_playlist'
+										value={favourite_coding_playlist}
+									/>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='follow_me_links'>Social Links:</label>
+									<input
+										type='text'
+										className='form-control'
+										name='follow_me_links'
+										value={follow_me_links}
+									/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 			{showControls && allowEditDelete && (
 				<div>
 					<input
