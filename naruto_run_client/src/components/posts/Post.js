@@ -27,6 +27,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 		favourite_coding_playlist,
 		follow_me_links
 	} = post;
+
 	const allowEditDelete = loggedInUser && loggedInUser === post.username;
 	// Handle the delete button
 	function handleDelete(e) {
