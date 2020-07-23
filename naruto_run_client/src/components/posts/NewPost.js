@@ -42,7 +42,7 @@ const NewPost = ({ history }) => {
 			})
 			.catch((error) => {
 				const status = error.response ? error.response.status : 500;
-				console.log('There was an error making the post:', error);
+				console.log('There was an error making the post:', error.message);
 				if (status === 403)
 					setErrorMessage(
 						'Sorry! Your session has gone missing. Please ensure that 3rd party cookies are not blocked in your browser settings.'

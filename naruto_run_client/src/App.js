@@ -48,9 +48,9 @@ const App = () => {
 						<Switch>
 							<Route exact path='/' component={Posts}></Route>
 							<Route exact path='/about' component={About}></Route>
+							<Route exact path='/posts/new' component={NewPost} />
 							<Route exact path='/posts/:id' component={ViewPost}></Route>
-							<Route exact path='/new' component={NewPost} />
-							<Route exact path='/edit/:id' component={EditPost} />
+							<Route exact path='/posts/:id/edit' component={EditPost} />
 							<Route exact path='/login' component={Login}></Route>
 							<Route exact path='/register' component={Register}></Route>
 							<Route component={NotFound}></Route>
