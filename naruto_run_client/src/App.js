@@ -4,6 +4,7 @@ import stateReducer from './config/stateReducer';
 import { StateContext } from './config/store';
 import { getAllNarutoPosts } from './services/narutoPostServices';
 import AppNavBar from './components/layout/AppNavBar';
+import Landing from './components/pages/Landing';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Posts from './components/posts/Posts';
@@ -46,7 +47,8 @@ const App = () => {
 					<AppNavBar branding='Naruto Run' />
 					<div className='container'>
 						<Switch>
-							<Route exact path='/' component={Posts}></Route>
+							<Route exact path='/' component={Landing}></Route>
+							<Route exact path='/posts' component={Posts}></Route>
 							<Route exact path='/about' component={About}></Route>
 							<Route exact path='/posts/new' component={NewPost} />
 							<Route exact path='/posts/:id' component={ViewPost}></Route>

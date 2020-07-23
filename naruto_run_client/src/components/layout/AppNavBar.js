@@ -48,6 +48,11 @@ const AppNavBar = () => {
 								<i className='fas fa-info'></i> About
 							</Link>
 						</li>
+						<li className='nav-item'>
+							<Link to='/posts' className='nav-link'>
+								<i className='fas fa-file-upload'></i> Posts
+							</Link>
+						</li>
 						{loggedInUser
 							? [
 									<li className='nav-item'>
