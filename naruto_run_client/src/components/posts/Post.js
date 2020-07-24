@@ -73,7 +73,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 			)}
 
 			<div>
-				<Link to={`/posts/${post._id}`}>
+				<Link style={{ textDecoration: 'none' }} to={`/posts/${post._id}`}>
 					<h1 className='display-5 text-center text-info'>{username}</h1>
 				</Link>
 				{/* <TimeAgo date={modified_date} /> */}
@@ -147,7 +147,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 										type='text'
 										className='form-control'
 										name='journey'
-										rows='5'
+										rows='3'
 										value={journey}
 									/>
 								</div>
