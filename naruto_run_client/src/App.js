@@ -2,7 +2,11 @@ import React, { useReducer, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import stateReducer from './config/stateReducer';
 import { StateContext } from './config/store';
-import { getAllNarutoPosts, getPostById } from './services/narutoPostServices';
+import {
+	getAllNarutoPosts,
+	getPostById,
+	getPostByUser
+} from './services/narutoPostServices';
 import {
 	userAuthenticated,
 	setLoggedInUser,
@@ -87,6 +91,20 @@ const App = () => {
 										<NarutoPost
 											{...props}
 											post={getPostById(narutoPosts, props.match.params.id)}
+											showControls
+										/>
+									)}
+								/>
+								<Route
+									exact
+									path='/posts/myposts'
+									render={(props) => (
+										<NarutoPost
+											{...props}
+											post={getPostByUser(
+												narutoPosts,
+												props.match.params.username
+											)}
 											showControls
 										/>
 									)}

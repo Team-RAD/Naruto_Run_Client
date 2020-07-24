@@ -77,6 +77,22 @@ const NarutoPost = ({ history, post, showControls }) => {
 				<Link style={{ textDecoration: 'none' }} to={`/posts/${post._id}`}>
 					<h1 className='display-5 text-center text-info'>{username}</h1>
 				</Link>
+				{showControls && allowEditDelete && (
+					<div>
+						<input
+							type='submit'
+							value='Delete'
+							className='btn btn-outline-danger'
+							onClick={handleDelete}
+						/>
+						<input
+							type='submit'
+							value='Edit'
+							className='btn btn-outline-dark'
+							onClick={handleEdit}
+						/>
+					</div>
+				)}
 				{/* <TimeAgo date={modified_date} /> */}
 				<div className='card'>
 					<div className='card-header'>
@@ -209,22 +225,6 @@ const NarutoPost = ({ history, post, showControls }) => {
 				</div>
 				<br />
 			</div>
-			{showControls && allowEditDelete && (
-				<div>
-					<input
-						type='submit'
-						value='Delete'
-						className='btn btn-outline-danger'
-						onClick={handleDelete}
-					/>
-					<input
-						type='submit'
-						value='Edit'
-						className='btn btn-outline-dark'
-						onClick={handleEdit}
-					/>
-				</div>
-			)}
 		</div>
 	);
 };
