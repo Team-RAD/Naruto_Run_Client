@@ -12,6 +12,12 @@ export function getPostById(narutoPosts, id) {
 	return post;
 }
 
+//Retrieve a Naruto Post by User
+export function getPostByUser(narutoPosts, username) {
+	const post = narutoPosts.find((post) => post.username === username);
+	return post;
+}
+
 // Deletes a Naruto Post
 export async function deleteNarutoPost(id) {
 	const response = await api.delete(`/posts/${id}`);

@@ -19,12 +19,16 @@ export default () => {
 					</h4>
 				</div>
 				<br />
-				<a role='button' class='btn btn-info btn-lg btn-block' href='/posts'>
+				<a
+					role='button'
+					className='btn btn-info btn-lg btn-block'
+					href='/posts'
+				>
 					RUN!
 				</a>
 				<a
 					role='button'
-					class='btn btn-secondary btn-lg btn-block'
+					className='btn btn-secondary btn-lg btn-block'
 					href='/register'
 				>
 					Register
