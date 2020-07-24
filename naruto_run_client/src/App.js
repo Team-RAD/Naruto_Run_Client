@@ -49,10 +49,10 @@ const App = () => {
 	useEffect(() => {
 		fetchNarutoPosts();
 		userAuthenticated()
-			.then(() => {
+			.then((username) => {
 				dispatch({
 					type: 'setLoggedInUser',
-					data: getLoggedInUser()
+					data: username
 				});
 			})
 			.catch((error) => {
@@ -60,7 +60,6 @@ const App = () => {
 					'Received an error while trying to check authenticated user:',
 					error
 				);
-				setLoggedInUser(null);
 				dispatch({
 					type: 'setLoggedInUser',
 					data: null
