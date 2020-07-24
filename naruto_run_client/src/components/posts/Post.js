@@ -74,7 +74,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 
 			<div>
 				<Link to={`/posts/${post._id}`}>
-					<h1 className='display-5 text-center text-warning'>{username}</h1>
+					<h1 className='display-5 text-center text-info'>{username}</h1>
 				</Link>
 				{/* <TimeAgo date={modified_date} /> */}
 				<div className='card'>

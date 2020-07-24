@@ -109,7 +109,7 @@ const EditPost = ({ history, match }) => {
 		<div>
 			<div>
 				<h1 className='display-4 text-center'>
-					Edit Your<span className='text-warning'> Naruto Post</span>
+					Edit Your<span className='text-info'> Naruto Post</span>
 				</h1>
 			</div>
 			<div className='card'>
@@ -247,7 +247,7 @@ const EditPost = ({ history, match }) => {
 							<input
 								type='submit'
 								value='Update'
-								className='btn btn-warning btn-block'
+								className='btn btn-info btn-block'
 							/>
 						</form>
 					</div>
