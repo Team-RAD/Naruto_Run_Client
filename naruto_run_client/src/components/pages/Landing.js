@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../NR_logo.svg';
 
 export default () => {
@@ -19,20 +20,20 @@ export default () => {
 					</h4>
 				</div>
 				<br />
-				<a
+				<Link
 					role='button'
 					className='btn btn-info btn-lg btn-block'
-					href='/posts'
+					to='/posts'
 				>
 					RUN!
-				</a>
-				<a
+				</Link>
+				<Link
 					role='button'
 					className='btn btn-secondary btn-lg btn-block'
-					href='/register'
+					to='/register'
 				>
 					Register
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

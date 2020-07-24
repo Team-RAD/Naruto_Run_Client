@@ -108,7 +108,7 @@ const EditPost = ({ history, match }) => {
 	return (
 		<div>
 			<div>
-				<h1 className='display-4 text-center'>
+				<h1 className='display-3 text-center'>
 					Edit Your<span className='text-info'> Naruto Post</span>
 				</h1>
 			</div>
