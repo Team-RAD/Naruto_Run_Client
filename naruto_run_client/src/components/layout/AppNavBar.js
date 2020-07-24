@@ -25,7 +25,7 @@ const AppNavBar = () => {
 	return (
 		<nav className='navbar navbar-expand-md navbar-dark bg-dark mb-3 py-0'>
 			<div className='container'>
-				<Link to='/' className='navbar-brand h1 text-warning'>
+				<Link to='/' className='navbar-brand h1 text-info'>
 					Naruto Run
 				</Link>
 				<button

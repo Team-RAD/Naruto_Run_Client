@@ -48,7 +48,7 @@ const Login = ({ history }) => {
 				<div className='card'>
 					<div className='card-body'>
 						<h1 className='text-center pb-4 pt-3'>
-							<span className='text-warning'>
+							<span className='text-info'>
 								<i className='fas fa-sign-in-alt'></i>
 							</span>{' '}
 							Login{' '}
@@ -85,7 +85,7 @@ const Login = ({ history }) => {
 							<input
 								type='submit'
 								value='Login'
-								className='btn btn-warning btn-block'
+								className='btn btn-info btn-block'
 							/>
 						</form>
 					</div>

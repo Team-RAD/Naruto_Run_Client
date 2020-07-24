@@ -79,7 +79,7 @@ const NewPost = ({ history }) => {
 		<div>
 			<div>
 				<h1 className='display-4 text-center'>
-					Add Your<span className='text-warning'> Naruto Post</span>
+					Add Your<span className='text-info'> Naruto Post</span>
 				</h1>
 			</div>
 			<div className='card'>
@@ -226,7 +226,7 @@ const NewPost = ({ history }) => {
 							<input
 								type='submit'
 								value='Create'
-								className='btn btn-warning btn-block'
+								className='btn btn-info btn-block'
 							/>
 						</form>
 					</div>

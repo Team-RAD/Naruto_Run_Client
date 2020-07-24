@@ -5,14 +5,14 @@ export default () => {
 		<div>
 			<div>
 				<h1 className='display-3 text-center'>
-					What is <span className='text-warning'>Naruto Run</span>?
+					What is <span className='text-info'>Naruto Run</span>?
 				</h1>
 				<p className='text-secondary text-center'>Version 1.0.0</p>
 			</div>
 			<br />
 			<div>
 				<h2 className='display-5 text-center'>
-					The <span className='text-warning'>Problem</span>
+					The <span className='text-info'>Problem</span>
 				</h2>
 				<p className='lead'>
 					Technology is a massive industry with many pathways of entry and
@@ -24,7 +24,7 @@ export default () => {
 			</div>
 			<div>
 				<h2 className='display-5	 text-center'>
-					The <span className='text-warning'>Solution</span>
+					The <span className='text-info'>Solution</span>
 				</h2>
 				<p className='lead'>
 					Naruto Run helps to speed up the process of identifying which area of
@@ -40,20 +40,20 @@ export default () => {
 			</div>
 			<div>
 				<h2 className='display-5	 text-center'>
-					The <span className='text-warning'>Team</span>
+					The <span className='text-info'>Team</span>
 				</h2>
 				<p className='lead text-center'>
 					We are Team RAD... Yep, we're that cool.
 				</p>
 				<ul className='lead text-center list-unstyled'>
 					<li>
-						<span className='lead text-warning'>Ryan</span> Challen
+						<span className='lead text-info'>Ryan</span> Challen
 					</li>
 					<li>
-						<span className='lead text-warning'>Adam</span> Hyde
+						<span className='lead text-info'>Adam</span> Hyde
 					</li>
 					<li>
-						<span className='lead text-warning'>David</span> Johnson
+						<span className='lead text-info'>David</span> Johnson
 					</li>
 				</ul>
 			</div>

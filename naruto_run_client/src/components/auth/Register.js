@@ -52,7 +52,7 @@ const Register = ({ history }) => {
 				<div className='card'>
 					<div className='card-body'>
 						<h1 className='text-center pb-4 pt-3'>
-							<span className='text-warning'>
+							<span className='text-info'>
 								<i className='fas fa-file-alt'></i>
 							</span>{' '}
 							Register{' '}
@@ -99,7 +99,7 @@ const Register = ({ history }) => {
 							<input
 								type='submit'
 								value='Register'
-								className='btn btn-warning btn-block'
+								className='btn btn-info btn-block'
 							/>
 						</form>
 					</div>
