@@ -50,7 +50,7 @@ const AppNavBar = () => {
 						</li>
 						<li className='nav-item'>
 							<Link to='/posts' className='nav-link'>
-								<i className='fas fa-file-upload'></i> All Posts
+								<i className='fas fa-address-card'></i> All Posts
 							</Link>
 						</li>
 						{loggedInUser
@@ -62,7 +62,7 @@ const AppNavBar = () => {
 									</li>,
 									<li className='nav-item'>
 										<Link to='/posts/myposts' className='nav-link'>
-											<i className='fas fa-sign-in-alt'></i> My Posts
+											<i className='fas fa-user-edit'></i> My Posts
 										</Link>
 									</li>,
 									<li className='nav-item'>

@@ -7,11 +7,7 @@ import {
 	getPostById,
 	getPostByUser
 } from './services/narutoPostServices';
-import {
-	userAuthenticated,
-	setLoggedInUser,
-	getLoggedInUser
-} from './services/authServices';
+import { userAuthenticated } from './services/authServices';
 import AppNavBar from './components/layout/AppNavBar';
 import Landing from './components/pages/Landing';
 import About from './components/pages/About';

@@ -82,13 +82,13 @@ const NarutoPost = ({ history, post, showControls }) => {
 						<input
 							type='submit'
 							value='Delete'
-							className='btn btn-outline-danger'
+							className='btn btn-danger'
 							onClick={handleDelete}
 						/>
 						<input
 							type='submit'
 							value='Edit'
-							className='btn btn-outline-dark'
+							className='btn btn-secondary'
 							onClick={handleEdit}
 						/>
 					</div>
