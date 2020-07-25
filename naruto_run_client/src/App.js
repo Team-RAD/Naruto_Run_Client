@@ -7,12 +7,17 @@ import {
 	getPostById,
 	getPostByUser
 } from './services/narutoPostServices';
-import { userAuthenticated } from './services/authServices';
+import {
+	userAuthenticated,
+	getLoggedInUser,
+	setLoggedInUser
+} from './services/authServices';
 import AppNavBar from './components/layout/AppNavBar';
 import Landing from './components/pages/Landing';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Posts from './components/posts/Posts';
+import MyPosts from './components/posts/MyPosts';
 import NarutoPost from './components/posts/Post';
 import NewPost from './components/posts/NewPost';
 import EditPost from './components/posts/EditPost';
@@ -79,6 +84,7 @@ const App = () => {
 								<Route exact path='/posts' component={Posts}></Route>
 								<Route exact path='/about' component={About}></Route>
 								<Route exact path='/posts/new' component={NewPost} />
+								<Route exact path='/posts/myposts' component={MyPosts} />
 								<Route
 									exact
 									path='/posts/:id'
@@ -90,20 +96,17 @@ const App = () => {
 										/>
 									)}
 								/>
-								<Route
+								{/* <Route
 									exact
 									path='/posts/myposts'
 									render={(props) => (
 										<NarutoPost
 											{...props}
-											post={getPostByUser(
-												narutoPosts,
-												props.match.params.username
-											)}
+											post={getAllNarutoPosts}
 											showControls
 										/>
 									)}
-								/>
+								/> */}
 								<Route exact path='/posts/edit/:id' component={EditPost} />
 								<Route exact path='/login' component={Login}></Route>
 								<Route exact path='/register' component={Register}></Route>

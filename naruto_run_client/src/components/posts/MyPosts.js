@@ -1,6 +1,7 @@
 import React from 'react';
 import NarutoPost from './Post';
 import { useGlobalState } from '../../config/store';
+// import { getPostByUser } from '../../services/narutoPostServices';
 
 const MyPosts = () => {
 	const { store } = useGlobalState();
@@ -9,7 +10,7 @@ const MyPosts = () => {
 		<div>
 			<div>
 				<h1 className='display-3 text-center'>
-					My <span className='text-info'>Naruto Posts</span>:
+					My <span className='text-info'>Naruto Posts</span>
 				</h1>
 			</div>
 			<br />
