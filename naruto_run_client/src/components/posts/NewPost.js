@@ -82,6 +82,7 @@ const NewPost = ({ history }) => {
 					Add Your<span className='text-info'> Naruto Post</span>
 				</h1>
 			</div>
+			<br />
 			<div className='card'>
 				<div className='card-header'>
 					<div className='card-body'>
