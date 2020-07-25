@@ -6,6 +6,8 @@ import { useGlobalState } from '../../config/store';
 const MyPosts = () => {
 	const { store } = useGlobalState();
 	const { narutoPosts } = store;
+	// const { narutoPosts, loggedInUser } = store;
+	// const post = getPostByUser(username);
 	return (
 		<div>
 			<div>
@@ -14,6 +16,7 @@ const MyPosts = () => {
 				</h1>
 			</div>
 			<br />
+			{/* narutoPosts && loggedInUser === post.username */}
 			{narutoPosts
 				.sort((a, b) => b.modified_date - a.modified_date)
 				.map((post) => (
