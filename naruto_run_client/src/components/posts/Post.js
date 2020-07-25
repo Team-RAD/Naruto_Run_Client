@@ -77,6 +77,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 				<Link to={`/posts/${post._id}`}>
 					<h1 className='display-5 text-center text-info'>{username}</h1>
 				</Link>
+				<br />
 				{showControls && allowEditDelete && (
 					<div>
 						<input

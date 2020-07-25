@@ -7,6 +7,12 @@ const Posts = () => {
 	const { narutoPosts } = store;
 	return (
 		<div>
+			<div>
+				<h1 className='display-3 text-center'>
+					NR <span className='text-info'>Success Stories</span>:
+				</h1>
+			</div>
+			<br />
 			{narutoPosts
 				.sort((a, b) => b.modified_date - a.modified_date)
 				.map((post) => (
