@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../NR_logo.svg';
+import { useGlobalState } from '../../config/store';
 
 export default () => {
+	const { store } = useGlobalState();
+	const { loggedInUser } = store;
 	return (
 		<div>
 			<div>
@@ -20,20 +23,32 @@ export default () => {
 					</h4>
 				</div>
 				<br />
-				<Link
-					role='button'
-					className='btn btn-info btn-lg btn-block'
-					to='/posts'
-				>
-					RUN!
-				</Link>
-				<Link
-					role='button'
-					className='btn btn-secondary btn-lg btn-block'
-					to='/register'
-				>
-					Register
-				</Link>
+				{loggedInUser
+					? [
+							<Link
+								role='button'
+								className='btn btn-info btn-lg btn-block'
+								to='/posts'
+							>
+								RUN!
+							</Link>
+					  ]
+					: [
+							<Link
+								role='button'
+								className='btn btn-info btn-lg btn-block'
+								to='/posts'
+							>
+								RUN!
+							</Link>,
+							<Link
+								role='button'
+								className='btn btn-secondary btn-lg btn-block'
+								to='/register'
+							>
+								Register
+							</Link>
+					  ]}
 			</div>
 		</div>
 	);

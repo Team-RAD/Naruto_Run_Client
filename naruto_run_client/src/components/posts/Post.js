@@ -74,7 +74,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 			)}
 
 			<div>
-				<Link style={{ textDecoration: 'none' }} to={`/posts/${post._id}`}>
+				<Link to={`/posts/${post._id}`}>
 					<h1 className='display-5 text-center text-info'>{username}</h1>
 				</Link>
 				{showControls && allowEditDelete && (
@@ -82,13 +82,13 @@ const NarutoPost = ({ history, post, showControls }) => {
 						<input
 							type='submit'
 							value='Delete'
-							className='btn btn-outline-danger'
+							className='btn btn-danger'
 							onClick={handleDelete}
 						/>
 						<input
 							type='submit'
 							value='Edit'
-							className='btn btn-outline-dark'
+							className='btn btn-secondary'
 							onClick={handleEdit}
 						/>
 					</div>
