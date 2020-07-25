@@ -3,7 +3,7 @@ import api from '../config/api';
 //post user details to login auth route and return response confirming retrieval
 export async function loginUser(userInfo) {
 	const response = await api.post('/auth/login', userInfo);
-	console.log('Retreived user from server', response);
+	console.log('Retrieved user from server', response);
 	return response.data;
 }
 
@@ -15,7 +15,7 @@ export async function logoutUser() {
 //post user details to register auth route and return response confirming retrieval
 export async function registerUser(userInfo) {
 	const response = await api.post('/auth/register', userInfo);
-	console.log('Retreived user from server', response);
+	console.log('Retrieved user from server', response);
 	return response.data;
 }
 

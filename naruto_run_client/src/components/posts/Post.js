@@ -10,7 +10,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 	const [errorMessage, setErrorMessage] = useState(null);
 	// If we don't have a post, return null
 	if (!post) return null;
-	console.log('Show Controls is showing: ', showControls);
+
 	const {
 		username,
 		// modified_date,
@@ -29,7 +29,6 @@ const NarutoPost = ({ history, post, showControls }) => {
 	} = post;
 
 	const allowEditDelete = loggedInUser && loggedInUser === post.username;
-	console.log('allow is showing: ', allowEditDelete);
 	// Handle the delete button
 	function handleDelete(e) {
 		e.preventDefault();
