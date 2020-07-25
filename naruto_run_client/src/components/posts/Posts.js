@@ -1,6 +1,7 @@
 import React from 'react';
 import NarutoPost from './Post';
 import { useGlobalState } from '../../config/store';
+import logo from '../../NR icon.svg';
 
 const Posts = () => {
 	const { store } = useGlobalState();
@@ -9,7 +10,8 @@ const Posts = () => {
 		<div>
 			<div>
 				<h1 className='display-3 text-center'>
-					NR <span className='text-info'>Success Stories</span>:
+					<img src={logo} alt='Naruto Run Logo' className='posts-logo' />{' '}
+					Success Stories
 				</h1>
 			</div>
 			<br />
