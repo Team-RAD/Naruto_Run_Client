@@ -11,6 +11,13 @@ export default () => {
 			</div>
 			<br />
 			<div>
+				<p><em>"As a developer that struggled finding my way into the industry I would like to be able to share my experiences with others so they can transition as easy as possible into their new roles." </em> - Ned Naruto (Founder)</p>
+
+				<p><em>"As a student I would like a platform that can help to find more direct pathways to specific parts of the tech industry and in the most cost effective/efficient way as I have a budget."</em> - Caleb Lungy (Struggling Student)</p>
+				
+			</div>
+			<br/>
+			<div>
 				<h2 className='display-5 text-center'>
 					The <span className='text-info'>Problem</span>
 				</h2>
