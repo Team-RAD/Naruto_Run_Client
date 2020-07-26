@@ -15,6 +15,14 @@ const Posts = () => {
 				</h1>
 			</div>
 			<br />
+			<div className='text-center'>
+				<h5>
+					<em>
+						Fast advice from community members that made their run into tech!
+					</em>
+				</h5>
+			</div>
+			<br />
 			{narutoPosts
 				.sort((a, b) => b.modified_date - a.modified_date)
 				.map((post) => (
