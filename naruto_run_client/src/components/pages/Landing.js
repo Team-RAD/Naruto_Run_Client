@@ -18,37 +18,39 @@ export default () => {
 				</div>
 				<br />
 				<div>
-					<h4 className='text-secondary text-center'>
-						Run head-first into a career in tech!
+					<h4 className='text-center'>
+						Find the best way to run head-first into a tech career!
 					</h4>
 				</div>
 				<br />
-				{loggedInUser
-					? [
-							<Link
-								role='button'
-								className='btn btn-info btn-lg btn-block'
-								to='/posts'
-							>
-								RUN!
-							</Link>
-					  ]
-					: [
-							<Link
-								role='button'
-								className='btn btn-info btn-lg btn-block'
-								to='/posts'
-							>
-								RUN!
-							</Link>,
-							<Link
-								role='button'
-								className='btn btn-secondary btn-lg btn-block'
-								to='/register'
-							>
-								Register
-							</Link>
-					  ]}
+				<div>
+					{loggedInUser
+						? [
+								<Link
+									role='button'
+									className='btn btn-info btn-lg btn-block'
+									to='/posts'
+								>
+									RUN!
+								</Link>
+						  ]
+						: [
+								<Link
+									role='button'
+									className='btn btn-info btn-lg btn-block'
+									to='/posts'
+								>
+									RUN!
+								</Link>,
+								<Link
+									role='button'
+									className='btn btn-secondary btn-lg btn-block'
+									to='/register'
+								>
+									Register
+								</Link>
+						  ]}
+				</div>
 			</div>
 		</div>
 	);
