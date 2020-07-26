@@ -1,13 +1,11 @@
 import React from 'react';
 import NarutoPost from './Post';
 import { useGlobalState } from '../../config/store';
-// import { getPostByUser } from '../../services/narutoPostServices';
 
 const MyPosts = () => {
 	const { store } = useGlobalState();
-	const { narutoPosts } = store;
-	// const { narutoPosts, loggedInUser } = store;
-	// const post = getPostByUser(username);
+	const { narutoPosts, loggedInUser } = store;
+
 	return (
 		<div>
 			<div>
@@ -16,9 +14,9 @@ const MyPosts = () => {
 				</h1>
 			</div>
 			<br />
-			{/* narutoPosts && loggedInUser === post.username */}
 			{narutoPosts
 				.sort((a, b) => b.modified_date - a.modified_date)
+				.filter((post) => post.username === loggedInUser)
 				.map((post) => (
 					<NarutoPost key={post._id} post={post} />
 				))}

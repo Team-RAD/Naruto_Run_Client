@@ -2,16 +2,8 @@ import React, { useReducer, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import stateReducer from './config/stateReducer';
 import { StateContext } from './config/store';
-import {
-	getAllNarutoPosts,
-	getPostById,
-	getPostByUser
-} from './services/narutoPostServices';
-import {
-	userAuthenticated,
-	getLoggedInUser,
-	setLoggedInUser
-} from './services/authServices';
+import { getAllNarutoPosts, getPostById } from './services/narutoPostServices';
+import { userAuthenticated } from './services/authServices';
 import AppNavBar from './components/layout/AppNavBar';
 import Landing from './components/pages/Landing';
 import About from './components/pages/About';
@@ -96,17 +88,6 @@ const App = () => {
 										/>
 									)}
 								/>
-								{/* <Route
-									exact
-									path='/posts/myposts'
-									render={(props) => (
-										<NarutoPost
-											{...props}
-											post={getAllNarutoPosts}
-											showControls
-										/>
-									)}
-								/> */}
 								<Route exact path='/posts/edit/:id' component={EditPost} />
 								<Route exact path='/login' component={Login}></Route>
 								<Route exact path='/register' component={Register}></Route>
