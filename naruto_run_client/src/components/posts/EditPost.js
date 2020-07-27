@@ -26,7 +26,6 @@ const EditPost = ({ history, match }) => {
 		const updatedPost = {
 			_id: post._id,
 			username: formState.username,
-			// modified_date: new Date(),
 			pre_tech_job: formState.pre_tech_job,
 			current_tech_job: formState.current_tech_job,
 			education: formState.education,
@@ -67,7 +66,6 @@ const EditPost = ({ history, match }) => {
 	}
 	const initialFormState = {
 		username: '',
-		// modified_date,
 		pre_tech_job: '',
 		current_tech_job: '',
 		education: '',

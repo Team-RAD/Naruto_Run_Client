@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import TimeAgo from 'react-timeago';
 import { useGlobalState } from '../../config/store';
 import { deleteNarutoPost } from '../../services/narutoPostServices';
 
@@ -8,12 +7,12 @@ const NarutoPost = ({ history, post, showControls }) => {
 	const { store, dispatch } = useGlobalState();
 	const { narutoPosts, loggedInUser } = store;
 	const [errorMessage, setErrorMessage] = useState(null);
+
 	// If we don't have a post, return null
 	if (!post) return null;
 
 	const {
 		username,
-		// modified_date,
 		pre_tech_job,
 		current_tech_job,
 		education,
@@ -29,6 +28,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 	} = post;
 
 	const allowEditDelete = loggedInUser && loggedInUser === post.username;
+
 	// Handle the delete button
 	function handleDelete(e) {
 		e.preventDefault();
@@ -93,7 +93,6 @@ const NarutoPost = ({ history, post, showControls }) => {
 						/>
 					</div>
 				)}
-				{/* <TimeAgo date={modified_date} /> */}
 				<div className='card'>
 					<div className='card-header'>
 						<div className='card-body'>
