@@ -19,7 +19,7 @@ export default () => {
 				<br />
 				<div>
 					<h4 className='text-center'>
-						Find the best way to run head-first into a tech career!
+						Find the best way to run head-first into tech!
 					</h4>
 				</div>
 				<br />
