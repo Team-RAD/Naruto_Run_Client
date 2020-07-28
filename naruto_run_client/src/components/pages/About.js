@@ -17,14 +17,14 @@ export default () => {
 						industry, I would like to share my advice with others so they can
 						transition much more easily into their tech career."{' '}
 					</em>{' '}
-					- Ned Naruto (Founder, Silent Partner)
+					- Nancy Naruto (Founder, Silent Partner)
 				</p>
 
 				<p>
 					<em className='text-info'>
-						"As a student, I would like a platform that helps me find the most
-						direct and cost effective pathways into the tech industry and in way
-						as I have a budget."
+						"As a tech hopeful, I would like a platform that helps me find the
+						most direct and cost effective pathways into the industry as I have
+						limited time and a budget."
 					</em>{' '}
 					- Caleb 'Lungy' Leung (Struggling New Coder)
 				</p>
