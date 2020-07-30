@@ -1,3 +1,12 @@
+let fixtures = {}
+beforeEach(() => {
+    cy.fixture('registeredUser.json').then((user) => {
+        // See what we get back from the fixture
+        console.log('data from fixture:', user)
+        fixtures.registeredUser = user
+    })
+})
+
 describe('Test login', () => {
     it('Should go to the login page', () => {
       cy.visit('/')
@@ -10,19 +19,12 @@ describe('Test login', () => {
       cy.root().should('contain','Username')
         .should('contain', 'Password')
     })
-  })
 
-  describe('Test register', () => {
-    it('Should go to the register page', () => {
-      cy.visit('/')
-      cy.contains('Register').click()
-      cy.url().should('include', '/register')
+    it('can login', () => {
+      cy.get('Username').type(fixtures.registeredUser.username)
+      cy.get('Password').type(fixtures.registeredUser.password)
+    cy.get('Login').click()
+    cy.get('/').should('be.visible')
     })
-    
-    it('should render Register component', () => {
-      cy.contains('Register').click()
-      cy.root().should('contain','Name')
-        .should('contain', 'Email')
-        .should('contain', 'Password')
-    })
-  })
+})
+
