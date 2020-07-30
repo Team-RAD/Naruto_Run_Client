@@ -7,7 +7,6 @@ import { userAuthenticated } from './services/authServices';
 import AppNavBar from './components/layout/AppNavBar';
 import Landing from './components/pages/Landing';
 import About from './components/pages/About';
-import NotFound from './components/pages/NotFound';
 import Posts from './components/posts/Posts';
 import MyPosts from './components/posts/MyPosts';
 import NarutoPost from './components/posts/Post';
@@ -37,7 +36,7 @@ const App = () => {
 	}
 
 	const [store, dispatch] = useReducer(stateReducer, initialState);
-	const { narutoPosts, error } = store;
+	const { narutoPosts } = store;
 
 	useEffect(() => {
 		fetchNarutoPosts();
@@ -68,31 +67,27 @@ const App = () => {
 				<BrowserRouter>
 					<AppNavBar branding='Naruto Run' />
 					<div className='container'>
-						{error ? (
-							<NotFound />
-						) : (
-							<Switch>
-								<Route exact path='/' component={Landing}></Route>
-								<Route exact path='/posts' component={Posts}></Route>
-								<Route exact path='/about' component={About}></Route>
-								<Route exact path='/posts/new' component={NewPost} />
-								<Route exact path='/posts/myposts' component={MyPosts} />
-								<Route
-									exact
-									path='/posts/:id'
-									render={(props) => (
-										<NarutoPost
-											{...props}
-											post={getPostById(narutoPosts, props.match.params.id)}
-											showControls
-										/>
-									)}
-								/>
-								<Route exact path='/posts/edit/:id' component={EditPost} />
-								<Route exact path='/login' component={Login}></Route>
-								<Route exact path='/register' component={Register}></Route>
-							</Switch>
-						)}
+						<Switch>
+							<Route exact path='/' component={Landing}></Route>
+							<Route exact path='/posts' component={Posts}></Route>
+							<Route exact path='/about' component={About}></Route>
+							<Route exact path='/posts/new' component={NewPost} />
+							<Route exact path='/posts/myposts' component={MyPosts} />
+							<Route
+								exact
+								path='/posts/:id'
+								render={(props) => (
+									<NarutoPost
+										{...props}
+										post={getPostById(narutoPosts, props.match.params.id)}
+										showControls
+									/>
+								)}
+							/>
+							<Route exact path='/posts/edit/:id' component={EditPost} />
+							<Route exact path='/login' component={Login}></Route>
+							<Route exact path='/register' component={Register}></Route>
+						</Switch>
 					</div>
 				</BrowserRouter>
 			</div>
