@@ -7,11 +7,14 @@ import {
 } from '../../services/narutoPostServices';
 
 const EditPost = ({ history, match }) => {
+	//Provide context for state and store
 	const { store, dispatch } = useGlobalState();
 	const { narutoPosts } = store;
+	//Provide matching for posts by id
 	const postId = match && match.params ? match.params.id : -1;
 	const post = getPostById(narutoPosts, postId);
 
+	//Handle changes to form fields on edit
 	function onChange(e) {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -21,6 +24,7 @@ const EditPost = ({ history, match }) => {
 		});
 	}
 
+	//Handle submission for editied form
 	function onSubmit(e) {
 		e.preventDefault();
 		const updatedPost = {
@@ -40,6 +44,7 @@ const EditPost = ({ history, match }) => {
 			follow_me_links: formState.follow_me_links
 		};
 
+		//Handle updating of post to server
 		updateNarutoPost(updatedPost)
 			.then(() => {
 				const otherPosts = narutoPosts.filter(
@@ -64,6 +69,7 @@ const EditPost = ({ history, match }) => {
 					);
 			});
 	}
+	//Set initial form field states
 	const initialFormState = {
 		username: '',
 		pre_tech_job: '',
@@ -80,6 +86,7 @@ const EditPost = ({ history, match }) => {
 		follow_me_links: ''
 	};
 
+	//Provide context for state and error handling
 	const [formState, setFormState] = useState(initialFormState);
 	const [errorMessage, setErrorMessage] = useState(null);
 

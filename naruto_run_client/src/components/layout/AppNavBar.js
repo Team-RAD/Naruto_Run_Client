@@ -5,6 +5,7 @@ import { useGlobalState } from '../../config/store';
 import { logoutUser } from '../../services/authServices';
 
 const AppNavBar = () => {
+	//Handle logout action for user
 	function handleLogout() {
 		logoutUser()
 			.then((response) => {
@@ -19,6 +20,7 @@ const AppNavBar = () => {
 		});
 	}
 
+	//Provide context for state and store
 	const { store, dispatch } = useGlobalState();
 	const { loggedInUser } = store;
 

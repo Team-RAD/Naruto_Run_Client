@@ -3,16 +3,19 @@ import { useGlobalState } from '../../config/store';
 import { registerUser } from '../../services/authServices';
 
 const Register = ({ history }) => {
+	//Set initial state for register form
 	const initialFormState = {
 		username: '',
 		email: '',
 		password: ''
 	};
 
+	//Provide global state and context
 	const [userDetails, setUserDetails] = useState(initialFormState);
 	const [errorMessage, setErrorMessage] = useState(null);
 	const { dispatch } = useGlobalState();
 
+	//Handle form field changes for registration of details
 	function onChange(e) {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -22,6 +25,7 @@ const Register = ({ history }) => {
 		});
 	}
 
+	//Handle submit action on login form
 	function onSubmit(e) {
 		e.preventDefault();
 		registerUser(userDetails)

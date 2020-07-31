@@ -4,6 +4,7 @@ import { useGlobalState } from '../../config/store';
 import { deleteNarutoPost } from '../../services/narutoPostServices';
 
 const NarutoPost = ({ history, post, showControls }) => {
+	//Provide context for state, error handling and store
 	const { store, dispatch } = useGlobalState();
 	const { narutoPosts, loggedInUser } = store;
 	const [errorMessage, setErrorMessage] = useState(null);
@@ -11,6 +12,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 	// If we don't have a post, return null
 	if (!post) return null;
 
+	//Define the schema of a post
 	const {
 		username,
 		pre_tech_job,
@@ -27,6 +29,7 @@ const NarutoPost = ({ history, post, showControls }) => {
 		follow_me_links
 	} = post;
 
+	//If valid user is logged in, allow access to edit/delete functionality
 	const allowEditDelete = loggedInUser && loggedInUser === post.username;
 
 	// Handle the delete button

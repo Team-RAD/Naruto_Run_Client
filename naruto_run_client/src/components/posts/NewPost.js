@@ -4,6 +4,7 @@ import { useGlobalState } from '../../config/store';
 import { addNarutoPost } from '../../services/narutoPostServices';
 
 const NewPost = ({ history }) => {
+	//Handle form change for new post
 	function onChange(e) {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -13,6 +14,7 @@ const NewPost = ({ history }) => {
 		});
 	}
 
+	//Handle submit for new post form
 	function onSubmit(e) {
 		e.preventDefault();
 		const newPost = {
@@ -32,6 +34,7 @@ const NewPost = ({ history }) => {
 			follow_me_links: formState.follow_me_links
 		};
 
+		//Handle creation of post to server
 		addNarutoPost(newPost)
 			.then((newPost) => {
 				dispatch({
@@ -70,6 +73,7 @@ const NewPost = ({ history }) => {
 		follow_me_links: ''
 	};
 
+	//Provide context for state, error handling and store
 	const [formState, setFormState] = useState(initialFormState);
 	const [errorMessage, setErrorMessage] = useState(null);
 	const { store, dispatch } = useGlobalState();

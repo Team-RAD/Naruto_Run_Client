@@ -3,15 +3,18 @@ import { useGlobalState } from '../../config/store';
 import { loginUser, setLoggedInUser } from '../../services/authServices';
 
 const Login = ({ history }) => {
+	//Set initial login form state
 	const initialFormState = {
 		username: '',
 		password: ''
 	};
 
+	//Provide global state and context
 	const [userDetails, setUserDetails] = useState(initialFormState);
 	const [errorMessage, setErrorMessage] = useState(null);
 	const { dispatch } = useGlobalState();
 
+	//Handle submit action on login form
 	function onSubmit(e) {
 		e.preventDefault();
 		loginUser(userDetails)
@@ -32,6 +35,7 @@ const Login = ({ history }) => {
 			});
 	}
 
+	//Handle form field changes for credential entry
 	function onChange(e) {
 		e.preventDefault();
 		const name = e.target.name;

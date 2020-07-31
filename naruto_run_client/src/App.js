@@ -16,11 +16,13 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 
 const App = () => {
+	//Set initial state
 	const initialState = {
 		loggedInUser: null,
 		narutoPosts: []
 	};
 
+	//Get all NR posts from server
 	function fetchNarutoPosts() {
 		getAllNarutoPosts()
 			.then((narutoData) => {
@@ -35,9 +37,11 @@ const App = () => {
 			});
 	}
 
+	//Provide context for state and store
 	const [store, dispatch] = useReducer(stateReducer, initialState);
 	const { narutoPosts } = store;
 
+	//Provide post access to authenticated users
 	useEffect(() => {
 		fetchNarutoPosts();
 		userAuthenticated()

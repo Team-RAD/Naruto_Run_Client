@@ -4,6 +4,7 @@ import { useGlobalState } from '../../config/store';
 import logo from '../../NR icon.svg';
 
 const Posts = () => {
+	//Provide context for state and store
 	const { store } = useGlobalState();
 	const { narutoPosts } = store;
 	return (
@@ -23,6 +24,7 @@ const Posts = () => {
 				</h5>
 			</div>
 			<br />
+			{/* Display all posts on server date created order */}
 			{narutoPosts
 				.sort((a, b) => b.modified_date - a.modified_date)
 				.map((post) => (

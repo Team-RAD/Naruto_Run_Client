@@ -3,6 +3,7 @@ import NarutoPost from './Post';
 import { useGlobalState } from '../../config/store';
 
 const MyPosts = () => {
+	//Provide context for state and store
 	const { store } = useGlobalState();
 	const { narutoPosts, loggedInUser } = store;
 
@@ -14,6 +15,7 @@ const MyPosts = () => {
 				</h1>
 			</div>
 			<br />
+			{/* Display all posts for user by date created */}
 			{narutoPosts
 				.sort((a, b) => b.modified_date - a.modified_date)
 				.filter((post) => post.username === loggedInUser)
