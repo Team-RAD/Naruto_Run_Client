@@ -47,11 +47,7 @@ const App = () => {
 					data: username
 				});
 			})
-			.catch((error) => {
-				console.log(
-					'Received an error while trying to check authenticated user:',
-					error
-				);
+			.catch(() => {
 				dispatch({
 					type: 'setLoggedInUser',
 					data: null

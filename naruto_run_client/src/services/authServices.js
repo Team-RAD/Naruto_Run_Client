@@ -24,9 +24,8 @@ export async function userAuthenticated() {
 	try {
 		const response = await api.get('/auth/user');
 		return response.data;
-	} catch (error) {
-		console.log('An error occurred while authenticating user');
-		throw error;
+	} catch {
+		return null;
 	}
 }
 
